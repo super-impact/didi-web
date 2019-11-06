@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
-import Header from '../../components/organisms/Header';
-import Modal from '../../components/organisms/Modal';
+import Header from '../components/organisms/Header';
+import Modal from '../components/organisms/Modal';
 
 enum AuthMode {
   Signup = "Signup",
