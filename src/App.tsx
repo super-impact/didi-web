@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Routes from './pages/Routes';
 
-const client = new ApolloClient({ uri: "http://localhost:8001/graphql" });
+const client = new ApolloClient({ uri: "http://localhost:8000/graphql" });
 
 const App: React.FC = () => {
   return (
