@@ -6,6 +6,7 @@ module.exports = {
     },
     includes: [
       __dirname + '/src/**/*.ts',
+      __dirname + '/src/**/*.tsx',
     ],
   }
 }
