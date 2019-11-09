@@ -14,7 +14,7 @@ const MainTemplate: React.FC<Props> = ({ header, main }) => {
       <Header>{header}</Header>
       <ContentSection>
         <Mian>{main}</Mian>
-        <Aside>Right Section</Aside>
+        <Aside />
       </ContentSection>
     </Layout>
   );
