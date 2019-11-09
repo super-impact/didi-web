@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { BreakPoints } from '../../utils';
+
 interface Props {
   header: React.ReactNode;
+  main: React.ReactNode;
 }
 
-const MainTemplate: React.FC<Props> = ({ header }) => {
+const MainTemplate: React.FC<Props> = ({ header, main }) => {
   return (
     <Layout>
       <Header>{header}</Header>
-      <ContentSection>content</ContentSection>
+      <ContentSection>
+        <Mian>{main}</Mian>
+        <Aside>Right Section</Aside>
+      </ContentSection>
     </Layout>
   );
 };
-
-export default React.memo(MainTemplate);
 
 const Layout = styled.div`
   width: 100%;
@@ -31,7 +35,26 @@ const Header = styled.header`
 const ContentSection = styled.div`
   width: 100%;
   max-width: 1080px;
-
   margin: 0 auto;
   margin-top: 30px;
+  display: flex;
+
+  ${BreakPoints.media.tablet`
+    padding: 0 20px;
+    flex-direction: column;
+  `};
 `;
+
+const Mian = styled.main`
+  flex: 1;
+`;
+
+const Aside = styled.aside`
+  width: 340px;
+  margin-left: 20px;
+  ${BreakPoints.media.mobile`
+    margin-left: 0;
+  `}
+`;
+
+export default React.memo(MainTemplate);

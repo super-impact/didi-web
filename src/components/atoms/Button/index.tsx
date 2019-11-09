@@ -21,13 +21,13 @@ export enum ButtonBorderColor {
   GREEN = "#4c9968"
 }
 
-interface Props {
-  text: string;
+interface StyledProps {
   color: ButtonTextColor;
   backgroundColor: ButtonBackgroundColor;
   borderColor: ButtonBorderColor;
-  onClick: () => void;
 }
+
+type Props = { text: string; onClick: () => void } & StyledProps;
 
 const Button: React.FC<Props> = ({
   text,
@@ -50,11 +50,7 @@ const Button: React.FC<Props> = ({
   );
 };
 
-const StyledButton = styled.button<{
-  color: string;
-  backgroundColor: string;
-  borderColor: string;
-}>`
+const StyledButton = styled.button<StyledProps>`
   height: 30px;
   color: ${props => props.color};
   background-color: ${props => props.backgroundColor};

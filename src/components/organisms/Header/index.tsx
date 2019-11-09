@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from '../../atoms/Button';
+import Heading1 from '../../atoms/Typography/Heading1';
 
 interface Props {
   onClickSignInButton: () => void;
@@ -14,7 +15,7 @@ const Header: React.FC<Props> = ({
 }) => {
   return (
     <Layout>
-      <Logo>Didi</Logo>
+      <Heading1 fontWeight="bold">didi</Heading1>
       <AuthButtonsLayout>
         <SignInButton
           color={ButtonTextColor.BLACK}
@@ -42,11 +43,6 @@ const Layout = styled.div`
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
-`;
-
-const Logo = styled.span`
-  font-size: 24px;
-  font-weight: bold;
 `;
 
 const AuthButtonsLayout = styled.div`

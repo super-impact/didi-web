@@ -7,7 +7,7 @@ interface BuildMediaQueryParams {
 
 export const SIZE = {
   mobile: { maxWidth: 743 },
-  tablet: { minWidth: 744, maxWidth: 1127 },
+  tablet: { maxWidth: 1127 },
   desktop: { minWidth: 1128 }
 };
 
