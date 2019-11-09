@@ -62,8 +62,8 @@ const customStyle = css<{ textAlign?: string }>`
 `;
 
 const TextElement = styled.div<Props>`
-  ${props => TYPOGRAPHY_CSS_BY_TYPE[props.type]}
-  ${customStyle}
+  ${props => TYPOGRAPHY_CSS_BY_TYPE[props.type] as any}
+  ${customStyle as any}
 `;
 
 export default React.memo(Typography);
