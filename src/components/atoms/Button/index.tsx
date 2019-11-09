@@ -21,13 +21,18 @@ export enum ButtonBorderColor {
   GREEN = "#4c9968"
 }
 
+interface OwnProps {
+  text: React.ReactChild;
+  onClick: () => void;
+}
+
 interface StyledProps {
   color: ButtonTextColor;
   backgroundColor: ButtonBackgroundColor;
   borderColor: ButtonBorderColor;
 }
 
-type Props = { text: string; onClick: () => void } & StyledProps;
+type Props = OwnProps & StyledProps;
 
 const Button: React.FC<Props> = ({
   text,

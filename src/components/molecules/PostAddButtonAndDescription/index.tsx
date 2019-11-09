@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from '../../atoms/Button';
 import Body1 from '../../atoms/Typography/Body1';
+import Caption1 from '../../atoms/Typography/Caption1';
 
 const PostAddButtonAndDescription: React.FC = () => {
   return (
@@ -12,7 +13,11 @@ const PostAddButtonAndDescription: React.FC = () => {
       </Header>
       <ContentLayout>
         <StyledButton
-          text="10초안에 공유하기"
+          text={
+            <Caption1 fontWeight="bold" color="white">
+              10초안에 공유하기
+            </Caption1>
+          }
           onClick={() => alert("share button clicked")}
           color={ButtonTextColor.WHITE}
           backgroundColor={ButtonBackgroundColor.GREEN}
