@@ -56,6 +56,7 @@ const Aside = styled.aside`
   width: 340px;
   margin-left: 20px;
   ${BreakPoints.media.tablet`
+    width: 100%;
     margin-left: 0;
     margin-top: 20px;
   `}
