@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BreakPoints } from '../../utils';
+import PostAddButtonAndDescription from '../molecules/PostAddButtonAndDescription';
 
 interface Props {
   header: React.ReactNode;
@@ -14,7 +15,9 @@ const MainTemplate: React.FC<Props> = ({ header, main }) => {
       <Header>{header}</Header>
       <ContentSection>
         <Mian>{main}</Mian>
-        <Aside />
+        <Aside>
+          <PostAddButtonAndDescription />
+        </Aside>
       </ContentSection>
     </Layout>
   );
@@ -52,8 +55,9 @@ const Mian = styled.main`
 const Aside = styled.aside`
   width: 340px;
   margin-left: 20px;
-  ${BreakPoints.media.mobile`
+  ${BreakPoints.media.tablet`
     margin-left: 0;
+    margin-top: 20px;
   `}
 `;
 
