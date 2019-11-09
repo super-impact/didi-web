@@ -2,22 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BreakPoints } from '../../utils';
-import PostAddButtonAndDescription from '../molecules/PostAddButtonAndDescription';
 
 interface Props {
   header: React.ReactNode;
   main: React.ReactNode;
+  aside: React.ReactNode;
 }
 
-const MainTemplate: React.FC<Props> = ({ header, main }) => {
+const MainTemplate: React.FC<Props> = ({ header, main, aside }) => {
   return (
     <Layout>
       <Header>{header}</Header>
       <ContentSection>
         <Mian>{main}</Mian>
-        <Aside>
-          <PostAddButtonAndDescription />
-        </Aside>
+        <Aside>{aside}</Aside>
       </ContentSection>
     </Layout>
   );
