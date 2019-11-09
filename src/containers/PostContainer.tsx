@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import React from 'react';
 
+import PostListSkeleton from '../components/molecules/PostListSkeleton';
 import { PostFragments } from '../components/organisms/Post';
 import PostList from '../components/organisms/PostList';
 import { Posts, PostsVariables } from './__generated__/Posts';
@@ -21,7 +22,7 @@ const PostContainer: React.FC = () => {
   });
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <PostListSkeleton title="Today" postCount={5} />;
   }
 
   if (error) {
