@@ -12,6 +12,7 @@ export interface Posts_posts {
   title: string;
   thumbnailImageUrl: string;
   description: string;
+  likeCount: number;
 }
 
 export interface Posts {

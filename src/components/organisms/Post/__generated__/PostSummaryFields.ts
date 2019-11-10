@@ -12,4 +12,5 @@ export interface PostSummaryFields {
   title: string;
   thumbnailImageUrl: string;
   description: string;
+  likeCount: number;
 }
