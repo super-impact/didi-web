@@ -22,7 +22,7 @@ const PostContainer: React.FC = () => {
   });
 
   if (loading) {
-    return <PostListSkeleton title="Today" postCount={5} />;
+    return <PostListSkeleton title="공유된 콘텐츠" postCount={5} />;
   }
 
   if (error) {
@@ -33,7 +33,7 @@ const PostContainer: React.FC = () => {
     return <div>no-data</div>;
   }
 
-  return <PostList posts={data.posts} />;
+  return <PostList title="공유된 콘텐츠" posts={data.posts} />;
 };
 
 export default PostContainer;

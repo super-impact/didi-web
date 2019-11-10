@@ -6,14 +6,15 @@ import Post from '../Post';
 import { PostSummaryFields } from '../Post/__generated__/PostSummaryFields';
 
 interface Props {
+  title: string;
   posts: PostSummaryFields[];
 }
 
-const PostList: React.FC<Props> = ({ posts }) => {
+const PostList: React.FC<Props> = ({ title, posts }) => {
   return (
     <Layout>
       <Header>
-        <Title fontWeight="bold">Today</Title>
+        <Title fontWeight="bold">{title}</Title>
       </Header>
       <Content>
         {posts.map(post => (
