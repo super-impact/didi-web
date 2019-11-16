@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from '../../atoms/Button';
@@ -15,7 +16,9 @@ const Header: React.FC<Props> = ({
 }) => {
   return (
     <Layout>
-      <Heading1 fontWeight="bold">didi</Heading1>
+      <Logo to="/">
+        <Heading1 fontWeight="bold">didi</Heading1>
+      </Logo>
       <AuthButtonsLayout>
         <SignInButton
           color={ButtonTextColor.BLACK}
@@ -43,6 +46,10 @@ const Layout = styled.div`
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
+`;
+
+const Logo = styled(Link)`
+  text-decoration: none;
 `;
 
 const AuthButtonsLayout = styled.div`
