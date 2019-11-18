@@ -30,6 +30,7 @@ interface StyledProps {
   color: ButtonTextColor;
   backgroundColor: ButtonBackgroundColor;
   borderColor: ButtonBorderColor;
+  fill?: boolean;
 }
 
 type Props = OwnProps & StyledProps;
@@ -56,15 +57,15 @@ const Button: React.FC<Props> = ({
 };
 
 const StyledButton = styled.button<StyledProps>`
-  height: 30px;
   color: ${props => props.color};
   background-color: ${props => props.backgroundColor};
   border: 1px solid ${props => props.borderColor};
   border-radius: 3px;
   outline: none;
-  padding: 0 16px;
+  padding: 8px 16px;
   cursor: pointer;
   font-weight: bold;
+  ${props => props.fill && "width: 100%;"}
 `;
 
 export default React.memo(Button);

@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import React from 'react';
 import { MdFavorite } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import IconButton from '../../atoms/IconButton';
@@ -28,7 +29,7 @@ type Props = {
 const Post: React.FC<Props> = ({ post }) => {
   return (
     <Layout>
-      <Link>
+      <StyledLink to={`/posts/${post.id}`}>
         <ThumbnailWrapper>
           <Thumbnail
             imageURL={post.thumbnailImageUrl}
@@ -42,7 +43,7 @@ const Post: React.FC<Props> = ({ post }) => {
           </Title>
           <Description color="#484848">{post.description}</Description>
         </DescriptionLayout>
-      </Link>
+      </StyledLink>
       <IconButtonWrapper>
         <IconButton
           icon={<MdFavorite size={16} />}
@@ -65,10 +66,11 @@ const Layout = styled.div`
   padding: 20px;
 `;
 
-const Link = styled.div`
+const StyledLink = styled(Link)`
   display: flex;
   flex: 1;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const ThumbnailWrapper = styled.div`
