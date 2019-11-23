@@ -37,8 +37,10 @@ const Post: React.FC<Props> = ({ post }) => {
           />
         </ThumbnailWrapper>
         <DescriptionLayout>
-          <Title>{post.title}</Title>
-          <Description>{post.description}</Description>
+          <Title color="#484848" fontWeight="bold">
+            {post.title}
+          </Title>
+          <Description color="#484848">{post.description}</Description>
         </DescriptionLayout>
       </Link>
       <IconButtonWrapper>
@@ -60,21 +62,17 @@ const Layout = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
-  position: relative;
+  padding: 20px;
 `;
 
 const Link = styled.div`
   display: flex;
   flex: 1;
-  padding: 20px;
   cursor: pointer;
-  :hover {
-    background-color: #f9f9f9;
-  }
 `;
 
 const ThumbnailWrapper = styled.div`
-  margin-right: 10px;
+  margin-right: 12px;
 `;
 
 const DescriptionLayout = styled.div`
@@ -83,16 +81,24 @@ const DescriptionLayout = styled.div`
 `;
 
 const Description = styled(Caption1)`
-  color: #6f6f6f;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const Title = styled(Body2)`
   font-weight: bold;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const IconButtonWrapper = styled.div`
-  position: absolute;
-  right: 20px;
+  margin-left: 12px;
 `;
 
 export default React.memo(Post);
