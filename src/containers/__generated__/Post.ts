@@ -27,6 +27,7 @@ export interface Post_post {
   createdAt: any;
   contentMakerEmail: string;
   contributorUser: Post_post_contributorUser;
+  likeCount: number;
   contentLink: string;
 }
 

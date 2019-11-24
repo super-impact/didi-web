@@ -8,5 +8,6 @@
 
 export interface PostBottomFixFields {
   __typename: "Post";
+  likeCount: number;
   contentLink: string;
 }

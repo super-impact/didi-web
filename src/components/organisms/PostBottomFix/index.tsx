@@ -9,6 +9,7 @@ import { PostBottomFixFields } from './__generated__/PostBottomFixFields';
 export const PostBottomFixFragments = {
   fields: gql`
     fragment PostBottomFixFields on Post {
+      likeCount
       contentLink
     }
   `
@@ -23,7 +24,7 @@ const PostBottomFix: React.FC<Props> = ({ post }) => {
     <Layout>
       <CTAButtonLayout>
         <RecommendButton onClick={() => alert("Hello")}>
-          <Text fontWeight="bold">추천하기 (3)</Text>
+          <Text fontWeight="bold">추천하기 ({post.likeCount})</Text>
         </RecommendButton>
         <ContentLink target="_blank" href={post.contentLink}>
           <Text color="white" fontWeight="bold">
