@@ -21,13 +21,13 @@ export interface Post_post_contributorUser {
 export interface Post_post {
   __typename: "Post";
   title: string;
-  thumbnailImageUrl: string;
   description: string;
   topics: Post_post_topics[];
-  contentLink: string;
+  thumbnailImageUrl: string;
+  createdAt: any;
   contentMakerEmail: string;
   contributorUser: Post_post_contributorUser;
-  createdAt: any;
+  contentLink: string;
 }
 
 export interface Post {
