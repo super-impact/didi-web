@@ -1,3 +1,4 @@
+import Breadcrumb from 'components/organisms/Breadcrumb';
 import PostAside from 'components/organisms/PostAside';
 import PostBottomFix from 'components/organisms/PostBottomFix';
 import PostContent from 'components/organisms/PostContent';
@@ -24,6 +25,7 @@ const PostDetailPage: React.FC = () => {
   return (
     <PostDetailTemplate
       header={<HeaderContainer />}
+      breadcrumb={<Breadcrumb />}
       contentHeader={<PostProfile post={data.post} />}
       contentMain={<PostContent post={data.post} />}
       contentAside={<PostAside post={data.post} />}

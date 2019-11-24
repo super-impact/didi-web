@@ -1,10 +1,10 @@
-import Breadcrumb from 'components/organisms/Breadcrumb';
 import React from 'react';
 import styled from 'styled-components';
 import { BreakPoints } from 'utils';
 
 interface Props {
   header: React.ReactNode;
+  breadcrumb: React.ReactNode;
   contentHeader: React.ReactNode;
   contentMain: React.ReactNode;
   contentAside: React.ReactNode;
@@ -13,6 +13,7 @@ interface Props {
 
 const PostDetailTemplate: React.FC<Props> = ({
   header,
+  breadcrumb,
   contentHeader,
   contentMain,
   contentAside,
@@ -22,9 +23,7 @@ const PostDetailTemplate: React.FC<Props> = ({
     <Layout>
       <Header>{header}</Header>
       <Main>
-        <BreadcrumbsWrapper>
-          <Breadcrumb />
-        </BreadcrumbsWrapper>
+        <BreadcrumbsWrapper>{breadcrumb}</BreadcrumbsWrapper>
         <ContentHeader>{contentHeader}</ContentHeader>
         <ContentBody>
           <ContentMain>{contentMain}</ContentMain>
