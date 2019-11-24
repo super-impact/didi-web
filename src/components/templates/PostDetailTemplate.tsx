@@ -1,3 +1,4 @@
+import Breadcrumb from 'components/organisms/Breadcrumb';
 import React from 'react';
 import styled from 'styled-components';
 import { BreakPoints } from 'utils';
@@ -21,6 +22,9 @@ const PostDetailTemplate: React.FC<Props> = ({
     <Layout>
       <Header>{header}</Header>
       <Main>
+        <BreadcrumbsWrapper>
+          <Breadcrumb />
+        </BreadcrumbsWrapper>
         <ContentHeader>{contentHeader}</ContentHeader>
         <ContentBody>
           <ContentMain>{contentMain}</ContentMain>
@@ -57,6 +61,13 @@ const Main = styled.main`
   ${BreakPoints.media.tablet`
     padding: 0 20px;
   `};
+`;
+
+const BreadcrumbsWrapper = styled.div`
+  margin-bottom: 12px;
+  ${BreakPoints.media.tablet`
+    margin-bottom: 8px;
+  `}
 `;
 
 const ContentHeader = styled.div`
