@@ -6,6 +6,7 @@ import PostProfile from 'components/organisms/PostProfile';
 import PostDetailTemplate from 'components/templates/PostDetailTemplate';
 import { HeaderContainer, usePostDetail } from 'containers';
 import React from 'react';
+import { SiteHeadManager } from 'utils/components';
 
 const PostDetailPage: React.FC = () => {
   const { loading, error, data } = usePostDetail();
@@ -23,14 +24,17 @@ const PostDetailPage: React.FC = () => {
   }
 
   return (
-    <PostDetailTemplate
-      header={<HeaderContainer />}
-      breadcrumb={<Breadcrumb />}
-      contentHeader={<PostProfile post={data.post} />}
-      contentMain={<PostContent post={data.post} />}
-      contentAside={<PostAside post={data.post} />}
-      bottomFix={<PostBottomFix post={data.post} />}
-    />
+    <>
+      <SiteHeadManager title={data.post.title} />
+      <PostDetailTemplate
+        header={<HeaderContainer />}
+        breadcrumb={<Breadcrumb />}
+        contentHeader={<PostProfile post={data.post} />}
+        contentMain={<PostContent post={data.post} />}
+        contentAside={<PostAside post={data.post} />}
+        bottomFix={<PostBottomFix post={data.post} />}
+      />
+    </>
   );
 };
 

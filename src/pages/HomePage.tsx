@@ -2,14 +2,18 @@ import PostAddButtonAndDescription from 'components/molecules/PostAddButtonAndDe
 import MainTemplate from 'components/templates/MainTemplate';
 import { HeaderContainer, PostContainer } from 'containers';
 import React from 'react';
+import { SiteHeadManager } from 'utils/components';
 
 const HomePage: React.FC = () => {
   return (
-    <MainTemplate
-      header={<HeaderContainer />}
-      main={<PostContainer />}
-      aside={<PostAddButtonAndDescription />}
-    />
+    <>
+      <SiteHeadManager title="DIDI - 콘텐츠 공유를 통한 지식 공유" />
+      <MainTemplate
+        header={<HeaderContainer />}
+        main={<PostContainer />}
+        aside={<PostAddButtonAndDescription />}
+      />
+    </>
   );
 };
 
