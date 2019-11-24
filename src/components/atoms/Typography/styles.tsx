@@ -57,7 +57,6 @@ export const body2 = css<TextStyleProperties>`
 
 export const caption1 = css<TextStyleProperties>`
   font-size: 14px;
-  line-height: 20px;
   font-weight: ${props => props.fontWeight || "normal"};
   color: ${props => props.color || slate50};
   margin: 0;
@@ -65,7 +64,6 @@ export const caption1 = css<TextStyleProperties>`
 
 export const caption2 = css<TextStyleProperties>`
   font-size: 12px;
-  line-height: 20px;
   font-weight: ${props => props.fontWeight || "normal"};
   color: ${props => props.color || slate50};
   margin: 0;
