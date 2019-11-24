@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
+import { LinkLabel } from 'components/atoms/Label';
 import React from 'react';
 import styled from 'styled-components';
 
-import { LinkLabel } from '../../atoms/Label';
 import { TopicFields } from './__generated__/TopicFields';
 
 export const TopicFragments = {

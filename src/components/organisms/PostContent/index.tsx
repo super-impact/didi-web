@@ -1,12 +1,12 @@
 import { gql } from 'apollo-boost';
+import { Label } from 'components/atoms/Label';
+import Line from 'components/atoms/Line';
+import Body2 from 'components/atoms/Typography/Body2';
 import React from 'react';
 import styled from 'styled-components';
+import { BreakPoints } from 'utils';
+import { getPostWritedDate } from 'utils/DateUtils';
 
-import { BreakPoints } from '../../../utils';
-import { getPostWritedDate } from '../../../utils/DateUtils';
-import { Label } from '../../atoms/Label';
-import Line from '../../atoms/Line';
-import Body2 from '../../atoms/Typography/Body2';
 import { PostContentFields } from './__generated__/PostContentFields';
 
 export const PostContentFragments = {

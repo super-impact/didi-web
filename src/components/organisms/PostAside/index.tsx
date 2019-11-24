@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
+import Body2 from 'components/atoms/Typography/Body2';
 import React from 'react';
 import styled from 'styled-components';
 
-import Body2 from '../../atoms/Typography/Body2';
 import { PostAsideFields } from './__generated__/PostAsideFields';
 
 export const PostAsideFragments = {

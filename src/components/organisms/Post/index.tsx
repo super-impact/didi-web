@@ -1,13 +1,13 @@
+import IconButton from 'components/atoms/IconButton';
+import Thumbnail from 'components/atoms/Thumbnail';
+import Body2 from 'components/atoms/Typography/Body2';
+import Caption1 from 'components/atoms/Typography/Caption1';
 import gql from 'graphql-tag';
 import React from 'react';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import IconButton from '../../atoms/IconButton';
-import Thumbnail from '../../atoms/Thumbnail';
-import Body2 from '../../atoms/Typography/Body2';
-import Caption1 from '../../atoms/Typography/Caption1';
 import { PostSummaryFields } from './__generated__/PostSummaryFields';
 
 export const PostFragments = {

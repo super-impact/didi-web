@@ -1,7 +1,7 @@
+import Heading2 from 'components/atoms/Typography/Heading2';
 import React from 'react';
 import styled from 'styled-components';
 
-import Heading2 from '../../atoms/Typography/Heading2';
 import Post from '../Post';
 import { PostSummaryFields } from '../Post/__generated__/PostSummaryFields';
 

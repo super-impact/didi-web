@@ -1,9 +1,8 @@
+import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/Button';
+import Heading1 from 'components/atoms/Typography/Heading1';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from '../../atoms/Button';
-import Heading1 from '../../atoms/Typography/Heading1';
 
 interface Props {
   onClickSignInButton: () => void;

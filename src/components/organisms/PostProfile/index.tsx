@@ -1,9 +1,9 @@
 import { gql } from 'apollo-boost';
+import Caption1 from 'components/atoms/Typography/Caption1';
+import Heading2 from 'components/atoms/Typography/Heading2';
 import React from 'react';
 import styled from 'styled-components';
 
-import Caption1 from '../../atoms/Typography/Caption1';
-import Heading2 from '../../atoms/Typography/Heading2';
 import { TopicFragments, TopicList } from '../List';
 import { PostProfileFields } from './__generated__/PostProfileFields';
 

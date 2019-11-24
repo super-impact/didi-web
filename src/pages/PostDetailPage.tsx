@@ -1,11 +1,10 @@
+import PostAside from 'components/organisms/PostAside';
+import PostBottomFix from 'components/organisms/PostBottomFix';
+import PostContent from 'components/organisms/PostContent';
+import PostProfile from 'components/organisms/PostProfile';
+import PostDetailTemplate from 'components/templates/PostDetailTemplate';
+import { HeaderContainer, usePostDetail } from 'containers';
 import React from 'react';
-
-import PostAside from '../components/organisms/PostAside';
-import PostBottomFix from '../components/organisms/PostBottomFix';
-import PostContent from '../components/organisms/PostContent';
-import PostProfile from '../components/organisms/PostProfile';
-import PostDetailTemplate from '../components/templates/PostDetailTemplate';
-import { HeaderContainer, usePostDetail } from '../containers';
 
 const PostDetailPage: React.FC = () => {
   const { loading, error, data } = usePostDetail();

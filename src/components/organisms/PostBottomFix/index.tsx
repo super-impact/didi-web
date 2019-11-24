@@ -1,9 +1,9 @@
 import { gql } from 'apollo-boost';
+import Body2 from 'components/atoms/Typography/Body2';
 import React from 'react';
 import styled from 'styled-components';
+import { BreakPoints } from 'utils';
 
-import { BreakPoints } from '../../../utils';
-import Body2 from '../../atoms/Typography/Body2';
 import { PostBottomFixFields } from './__generated__/PostBottomFixFields';
 
 export const PostBottomFixFragments = {
