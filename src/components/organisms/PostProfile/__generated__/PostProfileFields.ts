@@ -14,7 +14,6 @@ export interface PostProfileFields_topics {
 export interface PostProfileFields {
   __typename: "Post";
   title: string;
-  thumbnailImageUrl: string;
   description: string;
   topics: PostProfileFields_topics[];
 }
