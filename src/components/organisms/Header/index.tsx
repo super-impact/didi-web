@@ -1,4 +1,4 @@
-import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/Button';
+import LegacyButton, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/LegacyButton';
 import Heading1 from 'components/atoms/Typography/Heading1';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -26,7 +26,7 @@ const Header: React.FC<Props> = ({
           text="로그인"
           onClick={onClickSignInButton}
         />
-        <Button
+        <LegacyButton
           color={ButtonTextColor.WHITE}
           backgroundColor={ButtonBackgroundColor.GREEN}
           borderColor={ButtonBorderColor.GREEN}
@@ -57,6 +57,6 @@ const AuthButtonsLayout = styled.div`
   flex: 1;
 `;
 
-const SignInButton = styled(Button)`
+const SignInButton = styled(LegacyButton)`
   margin-right: 16px;
 `;

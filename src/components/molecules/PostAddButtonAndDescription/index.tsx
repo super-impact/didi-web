@@ -1,4 +1,4 @@
-import Button, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/Button';
+import LegacyButton, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/LegacyButton';
 import Body1 from 'components/atoms/Typography/Body1';
 import Caption1 from 'components/atoms/Typography/Caption1';
 import React from 'react';
@@ -39,7 +39,7 @@ const ContentLayout = styled.div`
   background-color: white;
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(LegacyButton)`
   width: 100%;
 `;
 

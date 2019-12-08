@@ -35,7 +35,7 @@ interface StyledProps {
 
 type Props = OwnProps & StyledProps;
 
-const Button: React.FC<Props> = ({
+const LegacyButton: React.FC<Props> = ({
   text,
   color,
   backgroundColor,
@@ -68,4 +68,4 @@ const StyledButton = styled.button<StyledProps>`
   ${props => props.fill && "width: 100%;"}
 `;
 
-export default React.memo(Button);
+export default React.memo(LegacyButton);
