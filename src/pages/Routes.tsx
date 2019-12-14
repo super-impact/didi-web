@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import AuthPage from './AuthPage';
 import HomePage from './HomePage';
-import LoginPage from './LoginPage';
 import PostDetailPage from './PostDetailPage';
 
 const Routes: React.FC = () => {
@@ -12,8 +12,8 @@ const Routes: React.FC = () => {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/auth/login">
-          <LoginPage />
+        <Route exact path="/auth/start">
+          <AuthPage />
         </Route>
         <Route exact path="/posts/:postId">
           <PostDetailPage />
