@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './HomePage';
+import LoginPage from './LoginPage';
 import PostDetailPage from './PostDetailPage';
 
 const Routes: React.FC = () => {
@@ -10,6 +11,9 @@ const Routes: React.FC = () => {
       <Switch>
         <Route exact path="/">
           <HomePage />
+        </Route>
+        <Route exact path="/auth/login">
+          <LoginPage />
         </Route>
         <Route exact path="/posts/:postId">
           <PostDetailPage />
