@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import AuthCallbackPage from './AuthCallbackPage';
 import AuthPage from './AuthPage';
 import HomePage from './HomePage';
 import PostDetailPage from './PostDetailPage';
@@ -17,6 +18,9 @@ const Routes: React.FC = () => {
         </Route>
         <Route exact path="/posts/:postId">
           <PostDetailPage />
+        </Route>
+        <Route exact path="/callback/auth">
+          <AuthCallbackPage />
         </Route>
       </Switch>
     </Router>
