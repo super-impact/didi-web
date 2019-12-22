@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getAccessToken } from 'utils/authTokenStore';
 
 import { useUserSessionContainer } from './useUserSessionContainer';
 
@@ -11,9 +12,16 @@ const UserSession: React.FC<Props> = ({ children }) => {
     loading,
     error,
     data,
+    getMyUser,
     setUserSession,
     setUserSessionLoading
   } = useUserSessionContainer();
+
+  useEffect(() => {
+    if (getAccessToken()) {
+      getMyUser();
+    }
+  }, [getMyUser]);
 
   if (loading) {
     setUserSessionLoading(loading);
