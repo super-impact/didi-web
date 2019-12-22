@@ -14,6 +14,7 @@ const App: React.FC = () => {
       <RootContextProvider
         value={{
           userSession: null,
+          authorized: false,
           isSessionLoading: true
         }}
       >

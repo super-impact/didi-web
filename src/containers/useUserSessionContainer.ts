@@ -1,10 +1,9 @@
-import { useQuery } from '@apollo/react-hooks';
+import { useLazyQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { RootContext } from 'Context/rootContext';
 import { UserSessionFragmentFields } from 'graphql/fragments/__generated__/UserSessionFragmentFields';
 import { UserSessionFragment } from 'graphql/fragments/UserSessionFragment';
 import { useCallback, useContext } from 'react';
-import { getAccessToken } from 'utils/authTokenStore';
 
 import { MyUser } from './__generated__/MyUser';
 
@@ -19,11 +18,14 @@ const GET_MY_USER = gql`
 
 export function useUserSessionContainer() {
   const rootContext = useContext(RootContext);
-  const { loading, error, data } = useQuery<MyUser>(GET_MY_USER);
+  const [getMyUser, { loading, error, data }] = useLazyQuery<MyUser>(
+    GET_MY_USER
+  );
 
   const setUserSession = useCallback(
     (userSession: UserSessionFragmentFields) => {
       rootContext.userSession = userSession;
+      rootContext.authorized = true;
     },
     [rootContext]
   );
@@ -35,12 +37,11 @@ export function useUserSessionContainer() {
     [rootContext.isSessionLoading]
   );
 
-  const isLoading = !getAccessToken() && loading;
-
   return {
-    loading: isLoading,
+    loading,
     error,
     data,
+    getMyUser,
     setUserSession,
     setUserSessionLoading
   };
