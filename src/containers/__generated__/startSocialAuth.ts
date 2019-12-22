@@ -9,6 +9,9 @@
 export interface StartSocialAuth_startSocialAuth_user {
   __typename: "User";
   id: string;
+  email: string;
+  displayName: string;
+  createdAt: any;
 }
 
 export interface StartSocialAuth_startSocialAuth {
