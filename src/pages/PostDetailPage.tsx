@@ -1,3 +1,4 @@
+import { SpinLoading } from 'components/molecules/Loading';
 import Breadcrumb from 'components/organisms/Breadcrumb';
 import PostAside from 'components/organisms/PostAside';
 import PostBottomFix from 'components/organisms/PostBottomFix';
@@ -12,7 +13,7 @@ const PostDetailPage: React.FC = () => {
   const { loading, error, data } = usePostDetail();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <SpinLoading />;
   }
 
   if (error) {

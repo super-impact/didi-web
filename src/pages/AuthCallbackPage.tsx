@@ -1,8 +1,8 @@
+import { SpinLoading } from 'components/molecules/Loading';
 import { useAuthContainer } from 'containers';
 import { useUserSessionContainer } from 'containers/useUserSessionContainer';
 import queryString from 'query-string';
 import React, { useEffect } from 'react';
-import ReactLoading from 'react-loading';
 import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { setAccessToken, setRefreshToken } from 'utils/authTokenStore';
@@ -28,11 +28,7 @@ const AuthCallbackPage: React.FC = () => {
   }, [location, startSocialAuth]);
 
   if (loading) {
-    return (
-      <Container>
-        <ReactLoading type="spin" color="#4c9968" width="64px" height="64px" />
-      </Container>
-    );
+    return <SpinLoading fullSizeMode />;
   }
 
   if (error || !data) {
