@@ -1,17 +1,26 @@
 import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
+import UserSession from 'containers/UserSession';
+import { RootContextProvider } from 'Context/rootContext';
+import { client } from 'graphql/apolloClient';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import Routes from './pages/Routes';
 
-const client = new ApolloClient({ uri: "http://localhost:8000/graphql" });
-
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
       <GlobalStyle />
-      <Routes />
+      <RootContextProvider
+        value={{
+          userSession: null,
+          isSessionLoading: true
+        }}
+      >
+        <UserSession>
+          <Routes />
+        </UserSession>
+      </RootContextProvider>
     </ApolloProvider>
   );
 };
