@@ -4,8 +4,10 @@ import { setContext } from 'apollo-link-context';
 import { createHttpLink } from 'apollo-link-http';
 import { getAccessToken } from 'utils/authTokenStore';
 
+const { REACT_APP_GRAPHQL_API_URL } = process.env;
+
 const httpLink = createHttpLink({
-  uri: "http://localhost:8000/graphql"
+  uri: REACT_APP_GRAPHQL_API_URL
 });
 
 const authLink = setContext((_, { headers }) => {
