@@ -3,7 +3,7 @@ import UserSession from 'containers/UserSession';
 import { RootContextProvider } from 'Context/rootContext';
 import { client } from 'graphql/apolloClient';
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import GlobalStyle from 'styles/globalStyles';
 
 import Routes from './pages/Routes';
 
@@ -27,14 +27,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-  }
-`;
