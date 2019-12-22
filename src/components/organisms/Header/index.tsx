@@ -5,33 +5,22 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface Props {
-  onClickSignInButton: () => void;
-  onClickSignUpButton: () => void;
+  onClickAuthStartButton: () => void;
 }
 
-const Header: React.FC<Props> = ({
-  onClickSignInButton,
-  onClickSignUpButton
-}) => {
+const Header: React.FC<Props> = ({ onClickAuthStartButton }) => {
   return (
     <Layout>
       <Logo to="/">
         <Heading1 fontWeight="bold">didi</Heading1>
       </Logo>
       <AuthButtonsLayout>
-        <SignInButton
-          color={ButtonTextColor.BLACK}
-          backgroundColor={ButtonBackgroundColor.WHITE}
-          borderColor={ButtonBorderColor.GRAY}
-          text="로그인"
-          onClick={onClickSignInButton}
-        />
         <LegacyButton
           color={ButtonTextColor.WHITE}
           backgroundColor={ButtonBackgroundColor.GREEN}
           borderColor={ButtonBorderColor.GREEN}
           text="시작하기"
-          onClick={onClickSignUpButton}
+          onClick={onClickAuthStartButton}
         />
       </AuthButtonsLayout>
     </Layout>
@@ -55,8 +44,4 @@ const AuthButtonsLayout = styled.div`
   display: flex;
   justify-content: flex-end;
   flex: 1;
-`;
-
-const SignInButton = styled(LegacyButton)`
-  margin-right: 16px;
 `;

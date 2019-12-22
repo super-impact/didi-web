@@ -1,45 +1,18 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Header from '../components/organisms/Header';
-import Modal from '../components/organisms/Modal';
-
-enum AuthMode {
-  Signup = "Signup",
-  Signin = "signin",
-  Deactivate = "deactivate"
-}
 
 const HeaderContainer: React.FC = () => {
-  // open modal
-  const [isOpenedModal, setOpenedModal] = useState(false);
-  const [authMode, setAuthMode] = useState(AuthMode.Deactivate);
+  const history = useHistory();
 
-  const openSigninModal = useCallback(() => {
-    setOpenedModal(true);
-    setAuthMode(AuthMode.Signin);
-  }, [setOpenedModal, setAuthMode]);
-
-  const openSignupModal = useCallback(() => {
-    setOpenedModal(true);
-    setAuthMode(AuthMode.Signup);
-  }, [setOpenedModal, setAuthMode]);
-
-  const closeModal = useCallback(() => {
-    setOpenedModal(false);
-    setAuthMode(AuthMode.Deactivate);
-  }, [setOpenedModal, setAuthMode]);
+  const goToAuthStartPage = useCallback(() => {
+    history.push("/auth/start");
+  }, [history]);
 
   return (
     <>
-      <Header
-        onClickSignInButton={openSigninModal}
-        onClickSignUpButton={openSignupModal}
-      />
-      {isOpenedModal && (
-        <Modal onCloseModal={closeModal}>
-          <h3>{authMode}</h3>
-        </Modal>
-      )}
+      <Header onClickAuthStartButton={goToAuthStartPage} />
     </>
   );
 };
