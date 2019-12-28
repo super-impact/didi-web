@@ -13,12 +13,12 @@ export enum ButtonTextColor {
 
 export enum ButtonBackgroundColor {
   WHITE = "#FFFFFF",
-  GREEN = "#4c9968"
+  GREEN = "#17487F"
 }
 
 export enum ButtonBorderColor {
   GRAY = "#c4c4c4",
-  GREEN = "#4c9968"
+  GREEN = "#17487F"
 }
 
 interface OwnProps {

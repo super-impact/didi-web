@@ -147,7 +147,7 @@ const SharedDate = styled(Caption1)`
 `;
 
 const LikeText = styled(Caption1)`
-  color: #2a6f43;
+  color: #17487f;
   font-weight: bold;
   cursor: pointer;
   font-size: 14px;
