@@ -27,9 +27,7 @@ const Layout = styled.div`
 const Header = styled.header`
   width: 100%;
   background-color: white;
-  padding: 12px 16px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid #e8e8e8;
+  padding: 14px 16px;
 `;
 
 const ContentSection = styled.div`
