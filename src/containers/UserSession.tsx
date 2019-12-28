@@ -33,6 +33,7 @@ const UserSession: React.FC<Props> = ({ children }) => {
 
   if (data) {
     setUserSession(data.myUser);
+    setUserSessionLoading(false);
   }
 
   return <>{children}</>;
