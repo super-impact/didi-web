@@ -3,6 +3,7 @@ import Caption1 from 'components/atoms/Typography/Caption1';
 import gql from 'graphql-tag';
 import moment from 'moment';
 import React from 'react';
+import { AiOutlineLike } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -38,24 +39,25 @@ type Props = {
 const Post: React.FC<Props> = ({ post }) => {
   return (
     <Layout>
-      <Header>
-        <SharedDate>
-          {moment(post.createdAt).format("YYYY-MM-DD HH:mm")}
-        </SharedDate>
-        <ProfileContainer>
-          <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
-          <ProfileName>{post.contributorUser.displayName}</ProfileName>
-        </ProfileContainer>
-      </Header>
+      <LikeContainer>
+        <StyledLikeIcon color="#17487f" size={16} />
+        <LikeText>좋아요 ({post.likeCount})</LikeText>
+      </LikeContainer>
       <StyledLink to={`/posts/${post.id}`}>
         <Title>{post.title}</Title>
         <Description>{post.description}</Description>
       </StyledLink>
-      <LikeContainer>
-        <LikeText>추천하기 ({post.likeCount})</LikeText>
-      </LikeContainer>
       <BottomContainer>
         {post.topics.length > 0 && <TopicList topics={post.topics} />}
+        <Header>
+          <SharedDate>
+            {moment(post.createdAt).format("YYYY-MM-DD HH:mm")}
+          </SharedDate>
+          <ProfileContainer>
+            <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
+            <ProfileName>{post.contributorUser.displayName}</ProfileName>
+          </ProfileContainer>
+        </Header>
       </BottomContainer>
     </Layout>
   );
@@ -78,10 +80,13 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-top: 12px;
 `;
 
 const LikeContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin-bottom: 12px;
 `;
 
@@ -114,11 +119,7 @@ const Description = styled(Caption1)`
   overflow: hidden;
 `;
 
-const BottomContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+const BottomContainer = styled.div``;
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -144,6 +145,10 @@ const SharedDate = styled(Caption1)`
   display: flex;
   justify-content: flex-start;
   color: #707070;
+`;
+
+const StyledLikeIcon = styled(AiOutlineLike)`
+  margin-right: 4px;
 `;
 
 const LikeText = styled(Caption1)`
