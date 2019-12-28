@@ -24,9 +24,6 @@ const PostList: React.FC<Props> = ({ title, posts }) => {
       </Header>
       <Content>
         <ColumnStackList items={posts} renderItem={renderItem} />
-        {posts.map(post => (
-          <Post post={post} />
-        ))}
       </Content>
     </Layout>
   );

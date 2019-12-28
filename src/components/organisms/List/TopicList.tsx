@@ -22,7 +22,11 @@ export const TopicList: React.FC<Props> = React.memo(({ topics }) => {
     <Layout>
       {topics.map(topic => {
         return (
-          <StyledLinkLabel to={`/topics/${topic.name}`} text={topic.name} />
+          <StyledLinkLabel
+            key={topic.name}
+            to={`/topics/${topic.name}`}
+            text={topic.name}
+          />
         );
       })}
     </Layout>

@@ -14,7 +14,7 @@ const PostListSkeleton: React.FC<Props> = ({ title, postCount }) => {
 
   for (let index = 0; index < postCount; index++) {
     items.push(
-      <PostWrapper>
+      <PostWrapper key={index}>
         <PostSkeleton />
       </PostWrapper>
     );
