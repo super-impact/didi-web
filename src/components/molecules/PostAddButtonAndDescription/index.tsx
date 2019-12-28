@@ -34,7 +34,6 @@ const Header = styled.div`
 `;
 
 const ContentLayout = styled.div`
-  padding: 20px;
   border-radius: 3px;
   background-color: white;
 `;
