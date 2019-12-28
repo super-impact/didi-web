@@ -1,5 +1,5 @@
 import LegacyButton, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/LegacyButton';
-import Heading1 from 'components/atoms/Typography/Heading1';
+import Heading2 from 'components/atoms/Typography/Heading2';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -12,7 +12,7 @@ const Header: React.FC<Props> = ({ onClickAuthStartButton }) => {
   return (
     <Layout>
       <Logo to="/">
-        <Heading1 fontWeight="bold">didi</Heading1>
+        <Heading2 fontWeight="bold">Stem</Heading2>
       </Logo>
       <AuthButtonsLayout>
         <LegacyButton
