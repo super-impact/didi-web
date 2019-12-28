@@ -28,7 +28,7 @@ const UserSession: React.FC<Props> = ({ children }) => {
   }
 
   if (error || !data) {
-    console.error("인증 실패");
+    return <></>;
   }
 
   if (data) {
