@@ -12,7 +12,7 @@ const AuthTemplate: React.FC = () => {
       <MainSection>
         <HeaderWrapper>
           <TitleWithDescription
-            titleText="디디 시작하기"
+            titleText="ㄷㄷ 시작하기"
             descriptionText="복잡한 절차없이 빠르게 시작해 볼까요?"
           />
         </HeaderWrapper>

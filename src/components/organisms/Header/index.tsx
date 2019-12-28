@@ -12,7 +12,7 @@ const Header: React.FC<Props> = ({ onClickAuthStartButton }) => {
   return (
     <Layout>
       <Logo to="/">
-        <Heading2 fontWeight="bold">Stem</Heading2>
+        <Heading2 fontWeight="bold">ㄷㄷ</Heading2>
       </Logo>
       <AuthButtonsLayout>
         <LegacyButton
