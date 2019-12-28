@@ -18,7 +18,9 @@ const PostList: React.FC<Props> = ({ title, posts }) => {
       </Header>
       <Content>
         {posts.map(post => (
-          <Post post={post} />
+          <PostWrapper key={post.id}>
+            <Post post={post} />
+          </PostWrapper>
         ))}
       </Content>
     </Layout>
@@ -31,13 +33,20 @@ const Layout = styled.div`
 `;
 
 const Header = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 `;
 
 const Title = styled(Heading2)``;
 
 const Content = styled.div`
   width: 100%;
+`;
+
+const PostWrapper = styled.div`
+  margin-bottom: 18px;
+  :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export default React.memo(PostList);

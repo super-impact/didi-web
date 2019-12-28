@@ -6,6 +6,19 @@
 // GraphQL query operation: Posts
 // ====================================================
 
+export interface Posts_posts_topics {
+  __typename: "Topic";
+  name: string;
+}
+
+export interface Posts_posts_contributorUser {
+  __typename: "User";
+  id: string;
+  email: string;
+  displayName: string;
+  profileImageUrl: string;
+}
+
 export interface Posts_posts {
   __typename: "Post";
   id: string;
@@ -13,6 +26,9 @@ export interface Posts_posts {
   thumbnailImageUrl: string;
   description: string;
   likeCount: number;
+  createdAt: any;
+  topics: Posts_posts_topics[];
+  contributorUser: Posts_posts_contributorUser;
 }
 
 export interface Posts {

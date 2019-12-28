@@ -6,6 +6,19 @@
 // GraphQL fragment: PostSummaryFields
 // ====================================================
 
+export interface PostSummaryFields_topics {
+  __typename: "Topic";
+  name: string;
+}
+
+export interface PostSummaryFields_contributorUser {
+  __typename: "User";
+  id: string;
+  email: string;
+  displayName: string;
+  profileImageUrl: string;
+}
+
 export interface PostSummaryFields {
   __typename: "Post";
   id: string;
@@ -13,4 +26,7 @@ export interface PostSummaryFields {
   thumbnailImageUrl: string;
   description: string;
   likeCount: number;
+  createdAt: any;
+  topics: PostSummaryFields_topics[];
+  contributorUser: PostSummaryFields_contributorUser;
 }
