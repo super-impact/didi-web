@@ -39,10 +39,10 @@ type Props = {
 const Post: React.FC<Props> = ({ post }) => {
   return (
     <Layout>
-      <LikeContainer>
-        <StyledLikeIcon color="#17487f" size={16} />
-        <LikeText>좋아요 ({post.likeCount})</LikeText>
-      </LikeContainer>
+      <ProfileContainer>
+        <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
+        <ProfileName>{post.contributorUser.displayName}</ProfileName>
+      </ProfileContainer>
       <StyledLink to={`/posts/${post.id}`}>
         <Title>{post.title}</Title>
         <Description>{post.description}</Description>
@@ -53,10 +53,10 @@ const Post: React.FC<Props> = ({ post }) => {
           <SharedDate>
             {moment(post.createdAt).format("YYYY-MM-DD HH:mm")}
           </SharedDate>
-          <ProfileContainer>
-            <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
-            <ProfileName>{post.contributorUser.displayName}</ProfileName>
-          </ProfileContainer>
+          <LikeContainer>
+            <StyledLikeIcon color="#17487f" size={16} />
+            <LikeText>좋아요 ({post.likeCount})</LikeText>
+          </LikeContainer>
         </Header>
       </BottomContainer>
     </Layout>
@@ -87,7 +87,6 @@ const LikeContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 12px;
 `;
 
 const StyledLink = styled(Link)`
@@ -123,7 +122,9 @@ const BottomContainer = styled.div``;
 
 const ProfileContainer = styled.div`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
+  margin-bottom: 12px;
 `;
 
 const ProfileImage = styled.div<{ imageURL: string }>`
