@@ -1,6 +1,6 @@
 import { useLazyQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { RootContext } from 'Context/rootContext';
+import { RootContext } from 'context/rootContext';
 import { UserSessionFragmentFields } from 'graphql/fragments/__generated__/UserSessionFragmentFields';
 import { UserSessionFragment } from 'graphql/fragments/UserSessionFragment';
 import { useCallback, useContext } from 'react';

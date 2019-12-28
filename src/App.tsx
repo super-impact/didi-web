@@ -1,6 +1,6 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import UserSession from 'containers/UserSession';
-import { RootContextProvider } from 'Context/rootContext';
+import { RootContextProvider } from 'context/rootContext';
 import { client } from 'graphql/apolloClient';
 import React from 'react';
 import GlobalStyle from 'styles/globalStyles';
