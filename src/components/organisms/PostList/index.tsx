@@ -1,5 +1,6 @@
 import Heading2 from 'components/atoms/Typography/Heading2';
-import React from 'react';
+import { ColumnStackList } from 'components/molecules/List';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
 import Post from '../Post';
@@ -11,16 +12,20 @@ interface Props {
 }
 
 const PostList: React.FC<Props> = ({ title, posts }) => {
+  const renderItem = useCallback(
+    (item: PostSummaryFields) => <Post key={item.id} post={item} />,
+    []
+  );
+
   return (
     <Layout>
       <Header>
         <Title fontWeight="bold">{title}</Title>
       </Header>
       <Content>
+        <ColumnStackList items={posts} renderItem={renderItem} />
         {posts.map(post => (
-          <PostWrapper key={post.id}>
-            <Post post={post} />
-          </PostWrapper>
+          <Post post={post} />
         ))}
       </Content>
     </Layout>
@@ -40,13 +45,6 @@ const Title = styled(Heading2)``;
 
 const Content = styled.div`
   width: 100%;
-`;
-
-const PostWrapper = styled.div`
-  margin-bottom: 18px;
-  :last-child {
-    margin-bottom: 0;
-  }
 `;
 
 export default React.memo(PostList);
