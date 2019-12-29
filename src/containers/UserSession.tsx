@@ -27,14 +27,15 @@ const UserSession: React.FC<Props> = ({ children }) => {
     setUserSessionLoading(loading);
   }
 
-  if (error || !data) {
-    return <></>;
+  if (error) {
+    return <h3>error: {error.message}</h3>;
   }
 
   if (data) {
     setUserSession(data.myUser);
-    setUserSessionLoading(false);
   }
+
+  setUserSessionLoading(false);
 
   return <>{children}</>;
 };
