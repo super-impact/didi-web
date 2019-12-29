@@ -37,7 +37,7 @@ const PostList: React.FC<Props> = ({
           dataLength={fetchedPostLength}
           hasMore={hasMore}
           next={loadMore}
-          loader={<h3>Loading...</h3>}
+          loader={<></>}
         >
           <ColumnStackList items={posts} renderItem={renderItem} />
         </InfiniteScroll>
