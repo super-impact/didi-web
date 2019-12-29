@@ -1,6 +1,7 @@
 import Heading2 from 'components/atoms/Typography/Heading2';
 import { ColumnStackList } from 'components/molecules/List';
 import React, { useCallback } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import styled from 'styled-components';
 
 import Post from '../Post';
@@ -9,9 +10,18 @@ import { PostSummaryFields } from '../Post/__generated__/PostSummaryFields';
 interface Props {
   title: string;
   posts: PostSummaryFields[];
+  hasMore: boolean;
+  fetchedPostLength: number;
+  loadMore: () => void;
 }
 
-const PostList: React.FC<Props> = ({ title, posts }) => {
+const PostList: React.FC<Props> = ({
+  title,
+  posts,
+  hasMore,
+  fetchedPostLength,
+  loadMore
+}) => {
   const renderItem = useCallback(
     (item: PostSummaryFields) => <Post key={item.id} post={item} />,
     []
@@ -20,10 +30,17 @@ const PostList: React.FC<Props> = ({ title, posts }) => {
   return (
     <Layout>
       <Header>
-        <Title fontWeight="bold">{title}</Title>
+        <Heading2 fontWeight="bold">{title}</Heading2>
       </Header>
       <Content>
-        <ColumnStackList items={posts} renderItem={renderItem} />
+        <InfiniteScroll
+          dataLength={fetchedPostLength}
+          hasMore={hasMore}
+          next={loadMore}
+          loader={<h3>Loading...</h3>}
+        >
+          <ColumnStackList items={posts} renderItem={renderItem} />
+        </InfiniteScroll>
       </Content>
     </Layout>
   );
@@ -37,8 +54,6 @@ const Layout = styled.div`
 const Header = styled.div`
   margin-bottom: 18px;
 `;
-
-const Title = styled(Heading2)``;
 
 const Content = styled.div`
   width: 100%;
