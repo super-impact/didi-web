@@ -11,6 +11,7 @@ export interface MyUser_myUser {
   id: string;
   email: string;
   displayName: string;
+  profileImageUrl: string;
   createdAt: any;
 }
 

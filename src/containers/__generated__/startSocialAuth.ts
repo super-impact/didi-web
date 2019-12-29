@@ -11,6 +11,7 @@ export interface StartSocialAuth_startSocialAuth_user {
   id: string;
   email: string;
   displayName: string;
+  profileImageUrl: string;
   createdAt: any;
 }
 

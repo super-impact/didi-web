@@ -5,6 +5,7 @@ export const UserSessionFragment = gql`
     id
     email
     displayName
+    profileImageUrl
     createdAt
   }
 `;
