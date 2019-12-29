@@ -8,13 +8,12 @@ interface Props {
   aside: React.ReactNode;
 }
 
-const MainTemplate: React.FC<Props> = ({ header, main, aside }) => {
+const MainTemplate: React.FC<Props> = ({ header, main }) => {
   return (
     <Layout>
       <Header>{header}</Header>
       <ContentSection>
         <Mian>{main}</Mian>
-        <Aside>{aside}</Aside>
       </ContentSection>
     </Layout>
   );
@@ -45,16 +44,6 @@ const ContentSection = styled.div`
 
 const Mian = styled.main`
   flex: 1;
-`;
-
-const Aside = styled.aside`
-  width: 340px;
-  margin-left: 20px;
-  ${BreakPoints.media.tablet`
-    width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-  `}
 `;
 
 export default React.memo(MainTemplate);
