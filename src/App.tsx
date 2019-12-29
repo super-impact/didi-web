@@ -2,20 +2,31 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import UserSession from 'containers/UserSession';
 import { RootContextProvider } from 'context/rootContext';
 import { client } from 'graphql/apolloClient';
-import React from 'react';
+import { UserSessionFragmentFields } from 'graphql/fragments/__generated__/UserSessionFragmentFields';
+import React, { useState } from 'react';
 import GlobalStyle from 'styles/globalStyles';
 
 import Routes from './pages/Routes';
 
 const App: React.FC = () => {
+  const [
+    userSession,
+    setUserSession
+  ] = useState<UserSessionFragmentFields | null>(null);
+  const [authorized, setAuthorized] = useState<boolean>(false);
+  const [isSessionLoading, setIsSessionLoading] = useState<boolean>(false);
+
   return (
     <ApolloProvider client={client}>
       <GlobalStyle />
       <RootContextProvider
         value={{
-          userSession: null,
-          authorized: false,
-          isSessionLoading: true
+          userSession,
+          authorized,
+          isSessionLoading,
+          setUserSession,
+          setAuthorized,
+          setIsSessionLoading
         }}
       >
         <UserSession>

@@ -24,17 +24,17 @@ export function useUserSessionContainer() {
 
   const setUserSession = useCallback(
     (userSession: UserSessionFragmentFields) => {
-      rootContext.userSession = userSession;
-      rootContext.authorized = true;
+      rootContext.setUserSession(userSession);
+      rootContext.setAuthorized(true);
     },
     [rootContext]
   );
 
   const setUserSessionLoading = useCallback(
     (loading: boolean) => {
-      rootContext.isSessionLoading = loading;
+      rootContext.setIsSessionLoading(loading);
     },
-    [rootContext.isSessionLoading]
+    [rootContext]
   );
 
   return {
