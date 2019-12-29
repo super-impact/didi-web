@@ -12,16 +12,15 @@ const HeaderContainer: React.FC = () => {
     history.push("/auth/start");
   }, [history]);
 
-  const { authorized, userSession } = rootContext;
+  const { authorized, userSession, isSessionLoading } = rootContext;
 
   return (
-    <>
-      <Header
-        onClickAuthStartButton={goToAuthStartPage}
-        authorized={authorized}
-        userSession={userSession}
-      />
-    </>
+    <Header
+      onClickAuthStartButton={goToAuthStartPage}
+      authorized={authorized}
+      userSession={userSession}
+      isSessionLoading={isSessionLoading}
+    />
   );
 };
 

@@ -18,21 +18,15 @@ const GET_MY_USER = gql`
 
 export function useUserSessionContainer() {
   const rootContext = useContext(RootContext);
+
   const [getMyUser, { loading, error, data }] = useLazyQuery<MyUser>(
     GET_MY_USER
   );
 
   const setUserSession = useCallback(
     (userSession: UserSessionFragmentFields) => {
-      rootContext.setUserSession(userSession);
       rootContext.setAuthorized(true);
-    },
-    [rootContext]
-  );
-
-  const setUserSessionLoading = useCallback(
-    (loading: boolean) => {
-      rootContext.setIsSessionLoading(loading);
+      rootContext.setUserSession(userSession);
     },
     [rootContext]
   );
@@ -43,6 +37,6 @@ export function useUserSessionContainer() {
     data,
     getMyUser,
     setUserSession,
-    setUserSessionLoading
+    setIsSessionLoading: rootContext.setIsSessionLoading
   };
 }

@@ -14,7 +14,7 @@ const App: React.FC = () => {
     setUserSession
   ] = useState<UserSessionFragmentFields | null>(null);
   const [authorized, setAuthorized] = useState<boolean>(false);
-  const [isSessionLoading, setIsSessionLoading] = useState<boolean>(false);
+  const [isSessionLoading, setIsSessionLoading] = useState<boolean>(true);
 
   return (
     <ApolloProvider client={client}>

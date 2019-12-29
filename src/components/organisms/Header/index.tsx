@@ -1,39 +1,50 @@
-import LegacyButton, { ButtonBackgroundColor, ButtonBorderColor, ButtonTextColor } from 'components/atoms/LegacyButton';
 import Heading1 from 'components/atoms/Typography/Heading1';
 import { UserSessionFragmentFields } from 'graphql/fragments/__generated__/UserSessionFragmentFields';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import UserProfile from '../Profile/UserProfile';
+import AuthGnb from '../Gnb/AuthGnb';
 
 interface Props {
   onClickAuthStartButton: () => void;
   authorized: boolean;
   userSession: UserSessionFragmentFields | null;
+  isSessionLoading: boolean;
 }
 
 const Header: React.FC<Props> = props => {
-  const { authorized, userSession, onClickAuthStartButton } = props;
+  const {
+    authorized,
+    userSession,
+    isSessionLoading,
+    onClickAuthStartButton
+  } = props;
+
+  if (isSessionLoading) {
+    return (
+      <Layout>
+        <Logo to="/">
+          <Heading1 fontWeight="bold">ㄷㄷ</Heading1>
+        </Logo>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
       <Logo to="/">
         <Heading1 fontWeight="bold">ㄷㄷ</Heading1>
       </Logo>
-      <AuthButtonsLayout>
-        {authorized && userSession ? (
-          <UserProfile userSession={userSession} />
+      <GnbContainer>
+        {authorized ? (
+          <AuthGnb userSession={userSession as UserSessionFragmentFields} />
         ) : (
-          <LegacyButton
-            color={ButtonTextColor.WHITE}
-            backgroundColor={ButtonBackgroundColor.GREEN}
-            borderColor={ButtonBorderColor.GREEN}
-            text="시작하기"
-            onClick={onClickAuthStartButton}
-          />
+          <StartTextButton onClick={onClickAuthStartButton}>
+            시작하기
+          </StartTextButton>
         )}
-      </AuthButtonsLayout>
+      </GnbContainer>
     </Layout>
   );
 };
@@ -51,8 +62,19 @@ const Logo = styled(Link)`
   text-decoration: none;
 `;
 
-const AuthButtonsLayout = styled.div`
+const GnbContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex: 1;
+`;
+
+const StartTextButton = styled.div`
+  font-size: 12px;
+  font-weight: bold;
+  color: #17487f;
+  border: 1px solid #17487f;
+  border-radius: 3px;
+  outline: none;
+  padding: 8px 16px;
+  cursor: pointer;
 `;

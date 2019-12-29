@@ -14,7 +14,7 @@ const UserSession: React.FC<Props> = ({ children }) => {
     data,
     getMyUser,
     setUserSession,
-    setUserSessionLoading
+    setIsSessionLoading
   } = useUserSessionContainer();
 
   useEffect(() => {
@@ -24,7 +24,8 @@ const UserSession: React.FC<Props> = ({ children }) => {
   }, [getMyUser]);
 
   if (loading) {
-    setUserSessionLoading(loading);
+    setIsSessionLoading(loading);
+    return <>{children}</>;
   }
 
   if (error) {
@@ -35,7 +36,7 @@ const UserSession: React.FC<Props> = ({ children }) => {
     setUserSession(data.myUser);
   }
 
-  setUserSessionLoading(false);
+  setIsSessionLoading(false);
 
   return <>{children}</>;
 };
