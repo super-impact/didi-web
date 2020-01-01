@@ -69,8 +69,6 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin-bottom: 16px;
-
   box-shadow: 0px 0px 4px #eee;
   border-radius: 8px;
   padding: 20px;
