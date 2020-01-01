@@ -1,5 +1,5 @@
 import Heading2 from 'components/atoms/Typography/Heading2';
-import { ColumnStackList } from 'components/molecules/List';
+import { TwoColumnList } from 'components/molecules/List';
 import React, { useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styled from 'styled-components';
@@ -39,7 +39,9 @@ const PostList: React.FC<Props> = ({
           next={loadMore}
           loader={<></>}
         >
-          <ColumnStackList items={posts} renderItem={renderItem} />
+          <ListWrapper>
+            <TwoColumnList items={posts} renderItem={renderItem} />
+          </ListWrapper>
         </InfiniteScroll>
       </Content>
     </Layout>
@@ -57,6 +59,10 @@ const Header = styled.div`
 
 const Content = styled.div`
   width: 100%;
+`;
+
+const ListWrapper = styled.div`
+  margin: 1px;
 `;
 
 export default React.memo(PostList);
