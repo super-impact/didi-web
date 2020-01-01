@@ -1,3 +1,4 @@
 import ColumnStackList from './ColumnStackList';
+import TwoColumnList from './TwoColumnList';
 
-export { ColumnStackList };
+export { ColumnStackList, TwoColumnList };
