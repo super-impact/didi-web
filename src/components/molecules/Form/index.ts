@@ -1,3 +1,4 @@
 import ErrorMessage from './ErrorMessage';
+import TextInput from './TextInput';
 
-export { ErrorMessage };
+export { TextInput, ErrorMessage };
