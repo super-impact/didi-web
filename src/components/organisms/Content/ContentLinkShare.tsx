@@ -1,6 +1,6 @@
 import Caption1 from 'components/atoms/Typography/Caption1';
 import Heading2 from 'components/atoms/Typography/Heading2';
-import { ErrorMessage } from 'components/molecules/Form';
+import { ErrorMessage, TextInput } from 'components/molecules/Form';
 import { useFormik } from 'formik';
 import React, { useCallback, useMemo } from 'react';
 import ReactLoading from 'react-loading';
@@ -57,8 +57,7 @@ const ContentLinkShare: React.FC<Props> = props => {
     <Container>
       <Title>콘텐츠 링크를 채워주세요</Title>
       <form onSubmit={formik.handleSubmit}>
-        <Input
-          type="text"
+        <TextInput
           name="contentURL"
           placeholder="콘텐츠 URL 주소"
           onChange={formik.handleChange}
@@ -101,21 +100,6 @@ const Container = styled.div`
 
 const Title = styled(Heading2)`
   margin-bottom: 22px;
-`;
-
-const Input = styled.input<{ isError: boolean }>`
-  width: 100%;
-  padding: 14px;
-  border-radius: 3px;
-  font-size: 14px;
-  outline: none;
-  border: 1px solid #eee;
-
-  ${props =>
-    props.isError &&
-    css`
-      border: 1px solid #e32249;
-    `}
 `;
 
 const ButtonContainer = styled.div`
