@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 import styled, { css } from 'styled-components';
 
-type Props = { isError: boolean } & HTMLProps<HTMLInputElement>;
+type Props = { isError?: boolean } & HTMLProps<HTMLInputElement>;
 
 const TextInput: React.FC<Props> = props => {
   const { isError, ref, as, ...restProps } = props;
@@ -11,7 +11,7 @@ const TextInput: React.FC<Props> = props => {
 
 export default React.memo(TextInput);
 
-const Input = styled.input<{ isError: boolean }>`
+const Input = styled.input<{ isError?: boolean }>`
   width: 100%;
   padding: 14px;
   border-radius: 3px;
