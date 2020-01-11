@@ -1,6 +1,6 @@
 import ErrorMessage from './ErrorMessage';
 import FieldWithTitle from './FieldWithTitle';
 import LockedTextField from './LockedTextField';
-import TextInput from './TextInput';
+import TextField from './TextField';
 
-export { TextInput, ErrorMessage, FieldWithTitle, LockedTextField };
+export { TextField, ErrorMessage, FieldWithTitle, LockedTextField };

@@ -1,6 +1,6 @@
 import Caption1 from 'components/atoms/Typography/Caption1';
 import Heading2 from 'components/atoms/Typography/Heading2';
-import { ErrorMessage, TextInput } from 'components/molecules/Form';
+import { ErrorMessage, TextField } from 'components/molecules/Form';
 import { useFormik } from 'formik';
 import React, { useCallback, useMemo } from 'react';
 import ReactLoading from 'react-loading';
@@ -57,7 +57,7 @@ const ContentLinkShare: React.FC<Props> = props => {
     <Container>
       <Title>콘텐츠 링크를 채워주세요</Title>
       <form onSubmit={formik.handleSubmit}>
-        <TextInput
+        <TextField
           name="contentURL"
           placeholder="콘텐츠 URL 주소"
           onChange={formik.handleChange}
