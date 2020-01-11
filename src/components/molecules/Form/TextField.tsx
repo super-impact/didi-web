@@ -1,12 +1,19 @@
 import React, { HTMLProps } from 'react';
 import styled, { css } from 'styled-components';
 
-type Props = { isError?: boolean } & HTMLProps<HTMLInputElement>;
+import { ErrorMessage } from '.';
+
+type Props = { errorMessage?: string } & HTMLProps<HTMLInputElement>;
 
 const TextField: React.FC<Props> = props => {
-  const { isError, ref, as, ...restProps } = props;
+  const { errorMessage, ref, as, ...restProps } = props;
 
-  return <Input isError={isError} {...restProps} type="text" />;
+  return (
+    <>
+      <Input isError={!!errorMessage} {...restProps} type="text" />
+      {errorMessage && <StyledErrorMessage message={errorMessage} />}
+    </>
+  );
 };
 
 export default React.memo(TextField);
@@ -24,4 +31,8 @@ const Input = styled.input<{ isError?: boolean }>`
     css`
       border: 1px solid #e32249;
     `}
+`;
+
+const StyledErrorMessage = styled(ErrorMessage)`
+  margin-top: 8px;
 `;

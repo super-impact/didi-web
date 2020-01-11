@@ -1,6 +1,6 @@
 import Caption1 from 'components/atoms/Typography/Caption1';
 import Heading2 from 'components/atoms/Typography/Heading2';
-import { ErrorMessage, TextField } from 'components/molecules/Form';
+import { TextField } from 'components/molecules/Form';
 import { useFormik } from 'formik';
 import React, { useCallback, useMemo } from 'react';
 import ReactLoading from 'react-loading';
@@ -62,11 +62,8 @@ const ContentLinkShare: React.FC<Props> = props => {
           placeholder="콘텐츠 URL 주소"
           onChange={formik.handleChange}
           value={formik.values.contentURL}
-          isError={!!formik.errors.contentURL}
+          errorMessage={formik.errors.contentURL}
         />
-        {formik.errors.contentURL && (
-          <StyledErrorMessage message={formik.errors.contentURL} />
-        )}
         <ButtonContainer>
           <Button
             type="submit"
@@ -116,10 +113,6 @@ const ButtonContainer = styled.div`
     align-items: center;
     margin-top: 0;
   `}
-`;
-
-const StyledErrorMessage = styled(ErrorMessage)`
-  margin-top: 8px;
 `;
 
 const Button = styled.button<{ loading: boolean }>`
