@@ -13,15 +13,13 @@ const CHECK_DUPLICATION_CONTENT_LINK = gql`
 `;
 
 export function useCheckDuplicationContentLink() {
-  const [checkDuplicationContentLink, { data, error, loading }] = useMutation<
+  const [checkDuplicationContentLink, response] = useMutation<
     CheckDuplicationContentLink,
     CheckDuplicationContentLinkVariables
   >(CHECK_DUPLICATION_CONTENT_LINK);
 
   return {
     checkDuplicationContentLink,
-    data,
-    error,
-    loading
+    checkDuplicationContentLinkResponse: response
   };
 }
