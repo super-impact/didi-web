@@ -1,3 +1,4 @@
+import ContentDetailWrite from './ContentDetailWrite';
 import ContentLinkShare from './ContentLinkShare';
 
-export { ContentLinkShare };
+export { ContentLinkShare, ContentDetailWrite };
