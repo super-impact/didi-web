@@ -8,8 +8,6 @@ const CREATE_POST = gql`
     $title: String!
     $description: String!
     $contentLink: String!
-    $thumbnailImageUrl: String!
-    $contentMakerEmail: String!
     $topics: [CreatePostTopicInput!]!
   ) {
     createPost(
@@ -17,8 +15,6 @@ const CREATE_POST = gql`
         title: $title
         description: $description
         contentLink: $contentLink
-        thumbnailImageUrl: $thumbnailImageUrl
-        contentMakerEmail: $contentMakerEmail
         topics: $topics
       }
     ) {

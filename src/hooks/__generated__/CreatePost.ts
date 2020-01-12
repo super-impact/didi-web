@@ -21,7 +21,5 @@ export interface CreatePostVariables {
   title: string;
   description: string;
   contentLink: string;
-  thumbnailImageUrl: string;
-  contentMakerEmail: string;
   topics: CreatePostTopicInput[];
 }
