@@ -26,7 +26,7 @@ interface Props {
 const PostContent: React.FC<Props> = ({ post }) => {
   return (
     <Layout>
-      <PostImage src={post.thumbnailImageUrl} />
+      <PostImage src={post.thumbnailImageUrl || ""} />
       <Line marginTop="20px" marginBottom="20px" />
       <Body2>{post.description}</Body2>
       <Footer>

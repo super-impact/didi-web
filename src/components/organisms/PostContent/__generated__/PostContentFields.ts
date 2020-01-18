@@ -8,7 +8,7 @@
 
 export interface PostContentFields {
   __typename: "Post";
-  thumbnailImageUrl: string;
+  thumbnailImageUrl: string | null;
   description: string;
   createdAt: any;
 }
