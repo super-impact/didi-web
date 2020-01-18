@@ -6,6 +6,7 @@ import AuthPage from './AuthPage';
 import ContentSharePage from './ContentSharePage';
 import HomePage from './HomePage';
 import PostDetailPage from './PostDetailPage';
+import ProfilePage from './ProfilePage';
 
 const Routes: React.FC = () => {
   return (
@@ -25,6 +26,9 @@ const Routes: React.FC = () => {
         </Route>
         <Route exact path="/share">
           <ContentSharePage />
+        </Route>
+        <Route exact path="/profile/:userId">
+          <ProfilePage />
         </Route>
       </Switch>
     </Router>
