@@ -19,7 +19,7 @@ const AuthGnb: React.FC<Props> = props => {
       <StyledLink to="/me/bookmark">
         <Item>내 북마크</Item>
       </StyledLink>
-      <StyledLink to="/me">
+      <StyledLink to={`/profile/${props.userSession.id}`}>
         <UserProfile userSession={props.userSession} />
       </StyledLink>
     </Container>
