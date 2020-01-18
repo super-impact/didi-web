@@ -7,7 +7,7 @@
 // ====================================================
 
 export interface PostAsideFields_contributorUser {
-  __typename: "User";
+  __typename: "ContributorUser";
   id: string;
   email: string;
   displayName: string;
@@ -15,6 +15,6 @@ export interface PostAsideFields_contributorUser {
 
 export interface PostAsideFields {
   __typename: "Post";
-  contentMakerEmail: string;
+  contentMakerEmail: string | null;
   contributorUser: PostAsideFields_contributorUser;
 }

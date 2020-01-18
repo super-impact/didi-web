@@ -12,7 +12,7 @@ export interface Post_post_topics {
 }
 
 export interface Post_post_contributorUser {
-  __typename: "User";
+  __typename: "ContributorUser";
   id: string;
   email: string;
   displayName: string;
@@ -23,9 +23,9 @@ export interface Post_post {
   title: string;
   description: string;
   topics: Post_post_topics[];
-  thumbnailImageUrl: string;
+  thumbnailImageUrl: string | null;
   createdAt: any;
-  contentMakerEmail: string;
+  contentMakerEmail: string | null;
   contributorUser: Post_post_contributorUser;
   likeCount: number;
   contentLink: string;
