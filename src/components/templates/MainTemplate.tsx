@@ -5,7 +5,6 @@ import { BreakPoints } from 'utils';
 interface Props {
   header: React.ReactNode;
   main: React.ReactNode;
-  aside: React.ReactNode;
 }
 
 const MainTemplate: React.FC<Props> = ({ header, main }) => {
