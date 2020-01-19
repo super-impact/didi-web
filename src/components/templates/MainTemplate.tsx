@@ -32,7 +32,6 @@ const ContentSection = styled.div`
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  margin-top: 30px;
   display: flex;
 
   ${BreakPoints.media.tablet`
