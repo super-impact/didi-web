@@ -1,4 +1,3 @@
-import Heading2 from 'components/atoms/Typography/Heading2';
 import { TwoColumnList } from 'components/molecules/List';
 import React, { useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -29,9 +28,6 @@ const PostList: React.FC<Props> = ({
 
   return (
     <Layout>
-      <Header>
-        <Heading2 fontWeight="bold">{title}</Heading2>
-      </Header>
       <Content>
         <InfiniteScroll
           dataLength={fetchedPostLength}
