@@ -49,10 +49,6 @@ const Layout = styled.div`
   flex-direction: column;
 `;
 
-const Header = styled.div`
-  margin-bottom: 18px;
-`;
-
 const Content = styled.div`
   width: 100%;
 `;
