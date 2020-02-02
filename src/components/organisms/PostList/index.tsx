@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styled from 'styled-components';
 
-import Post from '../Post';
+import ContentSummaryCard from '../Card/ContentSummaryCard';
 import { PostSummaryFields } from '../Post/__generated__/PostSummaryFields';
 
 interface Props {
@@ -22,7 +22,9 @@ const PostList: React.FC<Props> = ({
   loadMore
 }) => {
   const renderItem = useCallback(
-    (item: PostSummaryFields) => <Post key={item.id} post={item} />,
+    (item: PostSummaryFields) => (
+      <ContentSummaryCard key={item.id} post={item} />
+    ),
     []
   );
 
