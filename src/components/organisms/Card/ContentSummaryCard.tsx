@@ -41,10 +41,12 @@ const ContentSummaryCard: React.FC<Props> = React.memo(props => {
 
   return (
     <Container>
-      <ProfileContainer>
-        <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
-        <ProfileName>{post.contributorUser.displayName}</ProfileName>
-      </ProfileContainer>
+      <StyledLink to={`/profile/${post.contributorUser.id}`}>
+        <ProfileContainer>
+          <ProfileImage imageURL={post.contributorUser.profileImageUrl} />
+          <ProfileName>{post.contributorUser.displayName}</ProfileName>
+        </ProfileContainer>
+      </StyledLink>
       <StyledLink to={`/posts/${post.id}`}>
         <ContentSection>
           <ThumbnailImage src={post.thumbnailImageUrl || ""} />
